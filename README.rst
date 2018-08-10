@@ -6,6 +6,8 @@ A Python Markdown extension that replaces inline Graphviz definitins with inline
 
 refer: https://github.com/sprin/markdown-inline-graphviz
 
+Install `Graphviz <https://www.graphviz.org/>`_ first! The command "dot" should be in system PATH.
+
 example::
 
     {% dot attack_plan.svg
