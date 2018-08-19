@@ -25,6 +25,7 @@ Inspired by jawher/markdown-dot (https://github.com/jawher/markdown-dot)
 
 import re
 import markdown
+import subprocess
 import base64
 import graphviz
 
@@ -88,6 +89,12 @@ class InlineGraphvizPreprocessor(markdown.preprocessors.Preprocessor):
 
                 text = '%s\n%s\n%s' % (
                     text[:m.start()], img, text[m.end():])
+            except subprocess.CalledProcessError as exec_err:
+                err = str(exec_err)
+                if exec_err.stderr:
+                    err += (': ' + exec_err.stderr.decode())
+                text = '%s\n%s\n%s' % (
+                    text[:m.start()], str(err), text[m.end():])
             except Exception as err:
                 text = '%s\n%s\n%s' % (
                     text[:m.start()], str(err), text[m.end():])
