@@ -14,7 +14,7 @@ setup(
     author='Yugang LIU',
     author_email='liuyug@gmail.com',
     url='https://github.com/liuyug/python-markdown-graphviz.git',
-    license='MIT',
+    license='BSD',
     description='Graphviz extension for python-markdown',
     long_description=long_description,
     py_modules=['mdx_graphviz'],
